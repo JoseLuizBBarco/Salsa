@@ -7,23 +7,47 @@
     --secondary-color: #A8D38F;
     --ternary-color: #7B5E47;
     --background-color: #F0F8F1;
-    --text-color: #6E8B61;
+    --text-color: #fff;
     --title-font: 'Sansita Swashed', cursive;
     --body-font: 'Roboto Mono', monospace;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--body-font);
+}
+
 header {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--text-color);
+    font-family: var(--title-font);
     width: auto;
     height: 50px;
+    padding: 25px;
+    text-align: center;
+}
+
+nav {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+}
+
+main {
+    background-color: var(--secondary-color);
 }
 
 footer {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--text-color);
     width: auto;
     height: 50px;
+    padding: 5px;
+    text-align: center;
 }
 
 .opcoes-acessibilidade {
