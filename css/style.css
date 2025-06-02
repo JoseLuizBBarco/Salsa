@@ -7,35 +7,38 @@
     --secondary-color: #A8D38F;
     --ternary-color: #7B5E47;
     --background-color: #F0F8F1;
-    --text-color: #fff;
+    --title-color: #0f1f0f;
+    --text-color: #2f0f2f;
     --title-font: 'Sansita Swashed', cursive;
     --body-font: 'Roboto Mono', monospace;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     :root {
-        --primary-color: ;
-        --secondary-color: ;
-        --ternary-color: ;
-        --background-color: ;
-        --text-color: ;
+        --primary-color: #142c13;
+        --secondary-color: #3f5d36;
+        --ternary-color: #291d14;
+        --background-color: #0a0f0a;
+        --title-color: #c2e2b6;
+        --text-color: #f9d9f9;
     }
-} */
+}
 
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: var(--body-font);
     line-height: 1.6;
     text-align: justify;
+    background-color: var(--background-color);
 }
 
 header {
     background-color: var(--primary-color);
-    color: var(--text-color);
+    color: var(--title-color);
     font-family: var(--title-font);
     width: auto;
     padding: 25px;
@@ -44,18 +47,38 @@ header {
 
 nav {
     background-color: var(--primary-color);
-    color: var(--text-color);
+    color: var(--title-color);
     font-family: var(--body-font);
     position: sticky;
     top: 0;
+    text-align: center;
+}
+
+nav button {
+    background-color: var(--primary-color);
+    color: var(--title-color);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-family: var(--body-font);
+}
+
+nav button:hover {
+    background-color: var(--ternary-color);
+}
+
+nav div.menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
 }
 
 nav a {
-    color: var(--text-color);
+    color: var(--title-color);
     text-decoration: none;
     padding: 10px;
-    display: inline-block;
     transition: background-color 0.3s ease;
+    width: 100%;
 }
 
 nav a:hover {
@@ -65,18 +88,51 @@ nav a:hover {
 main {
     background-color: var(--secondary-color);
     padding: 25px;
+    font-family: var(--body-font);
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--title-color);
 }
 
 h2 {
     padding: 10px;
 }
 
+main button, main a {
+    background-color: var(--ternary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: var(--body-font);
+    margin: auto;
+    display: inline-block;
+}
+
+div.botoes {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+main button:hover, main a:hover {
+    background-color: var(--secondary-color);
+}
+
 footer {
     background-color: var(--primary-color);
-    color: var(--text-color);
+    color: var(--title-color);
     width: auto;
     padding: 10px;
     text-align: center;
+    font-family: var(--body-font);
+    position: relative;
+    bottom: 0;
 }
 
 div.acessibilidade {
@@ -94,6 +150,8 @@ div.acessibilidade button {
     background-color: var(--ternary-color);
     color: var(--text-color);
     border: none;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     padding: 10px;
     cursor: pointer;
@@ -102,4 +160,30 @@ div.acessibilidade button {
 
 div.acessibilidade button:hover {
     background-color: var(--secondary-color);
+}
+
+@media (min-width: 768px) {
+    nav div.menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav button {
+        margin: 0 10px;
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    main {
+        padding: 50px;
+        max-width: 768px;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
 }
