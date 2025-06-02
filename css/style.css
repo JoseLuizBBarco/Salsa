@@ -12,6 +12,16 @@
     --body-font: 'Roboto Mono', monospace;
 }
 
+/* @media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: ;
+        --secondary-color: ;
+        --ternary-color: ;
+        --background-color: ;
+        --text-color: ;
+    }
+} */
+
 * {
     margin: 0;
     padding: 0;
@@ -19,6 +29,8 @@
 
 body {
     font-family: var(--body-font);
+    line-height: 1.6;
+    text-align: justify;
 }
 
 header {
@@ -26,7 +38,6 @@ header {
     color: var(--text-color);
     font-family: var(--title-font);
     width: auto;
-    height: 50px;
     padding: 25px;
     text-align: center;
 }
@@ -35,21 +46,60 @@ nav {
     background-color: var(--primary-color);
     color: var(--text-color);
     font-family: var(--body-font);
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--ternary-color);
 }
 
 main {
     background-color: var(--secondary-color);
+    padding: 25px;
+}
+
+h2 {
+    padding: 10px;
 }
 
 footer {
     background-color: var(--primary-color);
     color: var(--text-color);
     width: auto;
-    height: 50px;
-    padding: 5px;
+    padding: 10px;
     text-align: center;
+}
+
+div.acessibilidade {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
 .opcoes-acessibilidade {
     display: none;
+}
+
+div.acessibilidade button {
+    background-color: var(--ternary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    font-family: var(--body-font);
+}
+
+div.acessibilidade button:hover {
+    background-color: var(--secondary-color);
 }
