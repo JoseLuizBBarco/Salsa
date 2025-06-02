@@ -1,14 +1,9 @@
 @charset "UTF-8";
 
 :root {
-    --primary-color: ;
-    --secondary-color: ;
-    --ternary-color: ;
-    --background-color: ;
-    --text-color: ;
-    --verde-folha: #3D7A3B;
-    --verde-claro: #A8D38F;
-    --verde-musgo: #6E8B61;
-    --marrom-terra: #7B5E47;
-    --branco-orvalho: #F0F8F1;
+    --primary-color: #3D7A3B;
+    --secondary-color: #A8D38F;
+    --ternary-color: #7B5E47;
+    --background-color: #F0F8F1;
+    --text-color: #6E8B61;
 }
