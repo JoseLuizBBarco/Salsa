@@ -1,60 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <title>Estágios da Salsa 🌿</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #e8f5e9;
-            text-align: center;
-            padding: 2rem;
-        }
-        #imagem {
-            font-size: 5rem;
-            margin-bottom: 1rem;
-            transition: transform 0.5s ease;
-        }
-        #descricao {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #388e3c;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salsa</title>
+  <link rel="stylesheet" href="css/style.css" media="screen">
+  <link rel="stylesheet" href="css/print.css" media="print">
 </head>
 <body>
-    <h1>🌱 Estágios da Planta Salsa</h1>
-    <div id="imagem">🌰</div>
-    <div id="descricao">1. Semente — A salsa começa como uma pequena semente marrom.</div>
-    <button onclick="proximoEstagio()">Próximo estágio</button>
-    <script src="js/script.js">
-        const estagios = [
-        { emoji: "🌰", texto: "1. Semente — A salsa começa como uma pequena semente marrom." },
-        { emoji: "🌱", texto: "2. Germinação — A semente brota e surge o primeiro brotinho." },
-        { emoji: "🌿", texto: "3. Plântula — Pequenas folhas aparecem, é o começo da salsa." },
-        { emoji: "🌾", texto: "4. Crescimento — As folhas se desenvolvem e crescem rapidamente." },
-        { emoji: "🌸", texto: "5. Floração — A salsa floresce para formar novas sementes." }
-        ];
+  <header>
+    <h1>Salsa Lisa (Petroselinum crispum)</h1>
+  </header>
+  <nav></nav>
+  <main></main>
+  <footer>Site desenvolvido pelos alunos do Colégio Adolpho</footer>
+  <script src="js/script.js"></script>
+  <h1>O que é ?</h1>
+  <p>A salsa, salsinha ou perrexil, é uma planta herbácea bienal, podendo-se também cultivar como anual. Nativa da região mediterrânica central (sul de Itália, Argélia e Tunísia), naturalizada em toda a Europa, é amplamente cultivada como condimento ou hortaliça.</p>
+  <h1>Mais informações sobre o tamanho</h1>
+  <p>Ela alcança de 10 a 25 cm de altura e possui talos que podem chegar a exceder 60 cm, com floríferos de 1 a 3 cme um tubérculo usado como reserva para o inverno. No segundo ano, desenvolve um talo de flor de até 75 cm de altura com folhas esparsas e umbela de topo plano com diâmetro de 3 a 10 cm, com várias flores verde-amareladas de 2 mm de diâmetro. As sementes são ovoides de 2 a 3mm. A planta normalmente morre após o amadurecimento das sementes.</p>
+  <h1>Cultivo</h1>
+  <p>O cultivo da salsa faz-se há mais de trezentos anos, sendo uma das ervas aromáticas mais populares da gastronomia mundial.
+    A reprodução é feita por sementes, num local ensolarado e em solo drenado que não seja demasiado compacto. Também pode ser cultivada em vasos fundos numa janela ensolarada. Desenvolve melhor entre 22 e 30 °C. A germinação é lenta, durando de quatro a seis semanas, e frequentemente, difícil, devido à furanocumarina que envolve a sua semente. Plantas cultivadas a partir dos talos são normalmente espaçadas em 10 cm, enquanto as cultivadas pela raiz são espaçadas em 20 cm para permitir o desenvolvimento da raiz.<br>
+    No cultivo, a salsa é subdividida em vários grupos cultivares dependendo da forma da planta, que é relacionado a seu uso final. Elas são frequentemente tratadas como variedades botânicas, mas são seleções de cultivo, não de origem botânica natural.
+  </p>
+  <h1>Benefícios e Precauções</h1> 
+  <p>A salsa fresca é rica em vitaminas e a sua celulose ajuda o movimento intestinal. Além de seu largo uso decorativo, a salsinha provê vários benefícios à saúde. É uma boa fonte de antioxidantes (especialmente luteolina), ácido fólico, vitamina C e vitamina A. Entre os benefícios à saúde declarados estão propriedades anti-inflamatórias e melhora no sistema imune.
 
-        let indice = 0;
-
-        function proximoEstagio() {
-            indice = (indice + 1) % estagios.length;
-            document.getElementById("imagem").innerText = estagios[indice].emoji;
-            document.getElementById("descricao").innerText = estagios[indice].texto;
-        }
-    </script>
+    Entretanto, a salsa não deve ser consumida em excesso por mulheres grávidas. É segura em quantidades normais de alimento, mas, em grandes quantidades, pode ter efeito indutor de parto, devido a um dos componentes do óleo essencial, o apiol.</p> 
 </body>
 </html>
