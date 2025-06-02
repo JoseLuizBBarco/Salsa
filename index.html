@@ -1,11 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <title>Estágios da Salsa 🌿</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e8f5e9;
+      text-align: center;
+      padding: 2rem;
+    }
+    #imagem {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+      transition: transform 0.5s ease;
+    }
+    #descricao {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #388e3c;
+    }
+  </style>
 </head>
 <body>
-    
+  <h1>🌱 Estágios da Planta Salsa</h1>
+  <div id="imagem">🌰</div>
+  <div id="descricao">1. Semente — A salsa começa como uma pequena semente marrom.</div>
+  <button onclick="proximoEstagio()">Próximo estágio</button>
+
+  <script>
+    const estagios = [
+      { emoji: "🌰", texto: "1. Semente — A salsa começa como uma pequena semente marrom." },
+      { emoji: "🌱", texto: "2. Germinação — A semente brota e surge o primeiro brotinho." },
+      { emoji: "🌿", texto: "3. Plântula — Pequenas folhas aparecem, é o começo da salsa." },
+      { emoji: "🌾", texto: "4. Crescimento — As folhas se desenvolvem e crescem rapidamente." },
+      { emoji: "🌸", texto: "5. Floração — A salsa floresce para formar novas sementes." }
+    ];
+
+    let indice = 0;
+
+    function proximoEstagio() {
+      indice = (indice + 1) % estagios.length;
+      document.getElementById("imagem").innerText = estagios[indice].emoji;
+      document.getElementById("descricao").innerText = estagios[indice].texto;
+    }
+  </script>
 </body>
 </html>
