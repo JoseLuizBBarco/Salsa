@@ -7,3 +7,21 @@
     --background-color: #F0F8F1;
     --text-color: #6E8B61;
 }
+
+header {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    width: auto;
+    height: 50px;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    width: auto;
+    height: 50px;
+}
+
+.opcoes-acessibilidade {
+    display: none;
+}
