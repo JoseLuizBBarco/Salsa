@@ -210,7 +210,7 @@ div.acessibilidade button:hover {
   main img {
     float: right;
     width: 320px;
-    max-width: 40%;
+    max-width: 20%;
     margin: 0 0 20px 30px;
     border-radius: 8px;
     box-shadow: var(--shadow);
