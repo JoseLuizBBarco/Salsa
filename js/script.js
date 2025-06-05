@@ -1,8 +1,10 @@
+// Função que mostra ou oculta as opções de acessibilidade
 function acessibilidade() {
   var opcoes = document.querySelector(".opcoes-acessibilidade");
   opcoes.style.display = opcoes.style.display === "block" ? "none" : "block";
 }
 
+// Função que aumenta a fonte do site
 function aumentarFonte() {
   var body = document.querySelector("body");
   var currentSize = window.getComputedStyle(body).fontSize;
@@ -10,6 +12,7 @@ function aumentarFonte() {
   body.style.fontSize = newSize + "px";
 }
 
+// Função que diminui a fonte do site
 function diminuirFonte() {
   var body = document.querySelector("body");
   var currentSize = window.getComputedStyle(body).fontSize;
@@ -17,6 +20,7 @@ function diminuirFonte() {
   body.style.fontSize = newSize + "px";
 }
 
+// Função que mostra ou oculta o menu do site
 function menuToggle() {
   var menu = document.querySelector(".menu");
   if (menu.style.display === "flex") {
@@ -28,6 +32,7 @@ function menuToggle() {
   }
 }
 
+// Função que arruma os bugs ao redimensionar a janela
 function mudouTamanhoJanela() {
   const itens = document.querySelector(".menu");
   const burger = document.querySelector(".burger");
@@ -40,6 +45,7 @@ function mudouTamanhoJanela() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Sistema de Compartilhamento
   const shareBtn = document.getElementById("share");
   if (shareBtn) {
     shareBtn.addEventListener("click", async function (e) {
@@ -79,4 +85,19 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  // Adiciona o rodapé à todas as páginas
+  const footer = document.querySelector("footer");
+  footer.innerHTML = `
+    <div class="acessibilidade">
+      <button id="acessibilidade" onclick="acessibilidade()">
+        <span class="material-symbols-outlined"> accessibility_new </span>
+      </button>
+      <div class="opcoes-acessibilidade">
+        <button id="aumentar-fonte" onclick="aumentarFonte()">A +</button>
+        <button id="diminuir-fonte" onclick="diminuirFonte()">A -</button>
+      </div>
+    </div>
+    <p>&copy; 2025 <br> Projeto desenvolvido pelos alunos dos 3ºs A e B do Colégio Adolpho</p>
+  `;
 });
