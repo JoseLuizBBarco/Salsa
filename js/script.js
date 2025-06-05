@@ -98,6 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
         <button id="diminuir-fonte" onclick="diminuirFonte()">A -</button>
       </div>
     </div>
-    <p>&copy; 2025 <br> Projeto desenvolvido pelos alunos dos 3ºs A e B do Colégio Adolpho</p>
+    <p>&copy; 2025 <br> Projeto desenvolvido pelos alunos das turmas 3º A e 3º B do Colégio Adolpho</p>
   `;
 });
