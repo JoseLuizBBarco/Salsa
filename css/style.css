@@ -13,6 +13,9 @@
   --title-font: "Sansita Swashed", cursive;
   --body-font: "Roboto Mono", monospace;
   --shadow: 0 4px 8px #00000033;
+  --print-font: "Times New Roman", Times, serif;
+  --print-background-color: #fff;
+  --print-color: #000;
 }
 
 * {
@@ -211,19 +214,62 @@ div.acessibilidade button:hover {
     float: right;
     width: 320px;
     max-width: 20%;
-    margin: 0 0 20px 30px;
+    margin: 20px;
     border-radius: 8px;
     box-shadow: var(--shadow);
     display: block;
   }
 
-  main p {
+  main p,
+  main .texto {
     max-width: 100%;
     background: var(--background-color);
-    border-radius: 10px;
+    border-radius: 15px;
     border-left: 5px solid var(--ternary-color);
     padding: 15px;
     margin-bottom: 24px;
     text-align: justify;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 3cm 2cm 2cm 3cm;
+}
+
+@media print {
+  body {
+    margin: none;
+    padding: none;
+    background-color: var(--print-background-color);
+    color: var(--print-color);
+    font-family: var(--print-font);
+  }
+
+  header,
+  nav,
+  footer {
+    display: none;
+  }
+
+  main {
+    padding: 20px;
+    font-size: 12pt;
+  }
+
+  main img {
+    float: right;
+    max-width: 20%;
+    height: auto;
+    border-radius: 5px;
+    margin: 20px;
+  }
+
+  main p,
+  main .texto {
+    border: none;
+    background-color: transparent;
+    font-size: 10pt;
+    margin-bottom: 10px;
   }
 }
