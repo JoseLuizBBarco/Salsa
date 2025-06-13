@@ -4,12 +4,21 @@ function acessibilidade() {
   opcoes.style.display = opcoes.style.display === "block" ? "none" : "block";
 }
 
+// Função que aplica o tamanho da fonte salvo no localStorage ao carregar a página
+function aplicarFonteSalva() {
+  var tamanhoSalvo = localStorage.getItem("tamanhoFonte");
+  if (tamanhoSalvo) {
+    document.querySelector("body").style.fontSize = tamanhoSalvo + "px";
+  }
+}
+
 // Função que aumenta a fonte do site
 function aumentarFonte() {
   var body = document.querySelector("body");
   var currentSize = window.getComputedStyle(body).fontSize;
   var newSize = parseFloat(currentSize) * 1.2; // Aumenta o tamanho da fonte em 20%
   body.style.fontSize = newSize + "px";
+  localStorage.setItem("tamanhoFonte", newSize); // Salva o novo tamanho no localStorage
 }
 
 // Função que diminui a fonte do site
@@ -18,7 +27,11 @@ function diminuirFonte() {
   var currentSize = window.getComputedStyle(body).fontSize;
   var newSize = parseFloat(currentSize) * 0.8; // Diminui o tamanho da fonte em 20%
   body.style.fontSize = newSize + "px";
+  localStorage.setItem("tamanhoFonte", newSize); // Salva o novo tamanho no localStorage
 }
+
+// Aplica o tamanho da fonte salvo ao carregar a página
+document.addEventListener("DOMContentLoaded", aplicarFonteSalva);
 
 // Função que mostra ou oculta o menu do site
 function menuToggle() {
