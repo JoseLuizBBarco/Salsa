@@ -9,8 +9,8 @@
   --secondary-color: #a8d38f;
   --ternary-color: #7b5e47;
   --background-color: #f0f8f1;
-  --title-color: #fff;
-  --text-color: #6e8b61;
+  --title-color: #6e8b61;
+  --text-color: #fff;
   --title-font: "Sansita Swashed", cursive;
   --body-font: "Roboto Mono", monospace;
   --shadow: 0 4px 8px #00000033;
@@ -31,33 +31,36 @@ body {
   background-color: var(--background-color);
 }
 
-header {
-  background-color: var(--primary-color);
-  color: var(--title-color);
-  font-family: var(--title-font);
-  width: auto;
-  padding: 25px;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 3em;
-  color: var(--title-color);
-}
-
 nav {
   background-color: var(--primary-color);
-  color: var(--title-color);
   font-family: var(--body-font);
   position: sticky;
   top: 0;
   text-align: center;
   box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+}
+
+nav div.tema h1 {
+  font-family: var(--title-font);
+  color: var(--text-color);
+}
+
+nav div.tema {
+  display: flex;
+  padding: 10px;
+}
+
+nav menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav button {
   background-color: var(--primary-color);
-  color: var(--title-color);
+  color: var(--text-color);
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -71,24 +74,34 @@ nav button:hover {
 nav div.menu {
   display: none;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow);
 }
 
 nav a {
-  color: var(--title-color);
+  color: var(--text-color);
   text-decoration: none;
   padding: 10px;
   transition: background-color 0.3s ease;
-  width: 100%;
+  height: 100%;
+  width: 75%;
 }
 
 nav a:hover {
   background-color: var(--ternary-color);
 }
 
+nav a.active {
+  border: 2px solid var(--text-color);
+}
+
 main {
-  background-color: var(--secondary-color);
-  padding: 50px;
   font-family: var(--body-font);
   color: var(--text-color);
 }
@@ -118,6 +131,21 @@ main a {
   display: inline-block;
 }
 
+main section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  min-height: 75vh; /* Garante altura mínima para centralização */
+  text-align: center; /* Opcional: centraliza o texto */
+  padding: 20px;
+  background-color: var(--background-color);
+}
+
+main section:nth-child(odd) {
+  background-color: var(--secondary-color);
+}
+
 main img {
   max-width: 100%;
   height: auto;
@@ -127,7 +155,7 @@ main img {
 
 main p,
 main .texto {
-  background-color: var(--background-color);
+  background-color: var(--primary-color);
   border-radius: 10px;
   border-left: 5px solid var(--ternary-color);
   padding: 10px;
@@ -147,10 +175,10 @@ main a:hover {
 
 footer {
   background-color: var(--primary-color);
-  color: var(--title-color);
+  color: var(--text-color);
   width: auto;
-  padding: 10px;
-  text-align: center;
+  padding: 25px;
+  text-align: justify;
   font-family: var(--body-font);
   position: relative;
   bottom: 0;
@@ -183,7 +211,15 @@ div.acessibilidade button:hover {
   background-color: var(--secondary-color);
 }
 
+footer p {
+  text-align: center;
+}
+
 @media (min-width: 768px) {
+  body {
+    font-size: 1.2rem;
+  }
+
   header h1 {
     font-size: 3rem;
   }
@@ -198,17 +234,31 @@ div.acessibilidade button:hover {
     margin: 0 10px;
   }
 
+  nav div.menu {
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
   .menu-button {
     display: none;
   }
 
+  nav a.active {
+    border: 0;
+    border-bottom: 5px solid var(--title-color);
+  }
+
   main {
     display: block;
-    max-width: 900px;
     margin: auto;
-    padding: 50px;
     background: var(--secondary-color);
     box-shadow: var(--shadow);
+  }
+
+  main section {
+    padding: 40px;
   }
 
   main img {
@@ -219,17 +269,6 @@ div.acessibilidade button:hover {
     border-radius: 8px;
     box-shadow: var(--shadow);
     display: block;
-  }
-
-  main p,
-  main .texto {
-    max-width: 100%;
-    background: var(--background-color);
-    border-radius: 15px;
-    border-left: 5px solid var(--ternary-color);
-    padding: 15px;
-    margin-bottom: 24px;
-    text-align: justify;
   }
 }
 
